@@ -57,10 +57,10 @@ async function update(id, language){
 
     const result = await db.query(
         `UPDATE languages
-        SET 
-        name = ('${language.name}', 
+        SET
+        name = '${language.name}', 
         description = '${language.description}', 
-        year = ${language.year})
+        year = ${language.year}
         WHERE id = ${id}
         `
     );
