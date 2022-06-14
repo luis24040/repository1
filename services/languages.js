@@ -74,9 +74,26 @@ async function update(id, language){
 
 }
 
+async function remove(id){
+
+    const result = await db.query(
+        `DELETE FROM languages WHERE id = ${id}
+        `
+    );
+
+    let message = "Error in deleting a language";
+    if(result.affectedRows){
+        message = "A language has been deleted";
+    }
+
+    return{ message }
+
+}
+
 module.exports = {
     getUser, 
     getMultiple, 
     create,
-    update
+    update,
+    remove
 };
