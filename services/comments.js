@@ -8,7 +8,7 @@ async function getComment(page = 1){
     const offset = helper.getOffset(page, config.listPerPage);
     const rows = await db.query(
         `SELECT id, comment, user, idpost
-        FROM comments LIMIT ${offset}, ${config.listPerPage}
+        FROM comment LIMIT ${offset}, ${config.listPerPage}
         `
     );
     const data = helper.emptyOrRows(rows);

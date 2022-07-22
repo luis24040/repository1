@@ -3,7 +3,7 @@ const config = {
         host: "localhost",
         user: "root",
         password: "",
-        database: "clientserver"
+        database: "clientserver1"
     },
     listPerPage: 10
 }

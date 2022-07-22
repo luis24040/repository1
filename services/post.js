@@ -8,7 +8,7 @@ async function getPost(page = 1){
     const offset = helper.getOffset(page, config.listPerPage);
     const rows = await db.query(
         `SELECT tittle, description, date, user, section, comment , id
-        FROM post LIMIT ${offset}, ${config.listPerPage}
+        FROM posts LIMIT ${offset}, ${config.listPerPage}
         `
     );
     const data = helper.emptyOrRows(rows);
